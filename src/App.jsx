@@ -11,13 +11,13 @@ function App() {
   return (
     <Router>
       <div
-  className="App"
-  style={{
-    background: 'linear-gradient(180deg, #1f2937 0%, #374151 60%, #ff7a33 100%)',
-    minHeight: '100vh',
-    minWidth: '100vw',
-    color: 'white',
-  }}
+ style={{
+  background: 'linear-gradient(180deg, #1f2937 0%, #374151 80%, #ff7a33 100%)',
+  minHeight: '100vh',
+  minWidth: '100vw',
+  color: 'white',
+}}
+  
   
   
   

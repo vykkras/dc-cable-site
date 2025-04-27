@@ -3,7 +3,7 @@ const Gallery = () => {
   
     return (
       <section className="section" style={{ padding: '2rem 1rem' }}>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center', color: '#eee' }}>
+        <h2 style={{ fontSize: '2.5rem', marginTop: '10rem',marginBottom: '2rem', textAlign: 'center', color: '#eee' }}>
           Project Gallery
         </h2>
   
