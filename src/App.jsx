@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div
  style={{
-  background: 'linear-gradient(180deg, #1f2937 0%, #374151 80%, #ff7a33 100%)',
+  background: "url('/fiber.jpg') center/cover no-repeat, linear-gradient(180deg, #1f2937 0%, #374151 80%, #ff7a33 100%)",
   minHeight: '100vh',
   minWidth: '100vw',
   color: 'white',
