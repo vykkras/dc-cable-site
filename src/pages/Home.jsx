@@ -14,7 +14,9 @@ const Home = () => {
 
   return (
     <section className="section">
-      <h1>DC Cable: Powering Possibilities</h1>
+      <div className="tagline">
+  <span className="tagline-normal">DC Cable:</span> <span className="tagline-gradient">Powering Possibilities</span>
+</div>
 
       <div className="highlights">
   <div className="highlight-box" onClick={() => openModal('OSHA Certified', 'We comply with all OSHA safety standards to ensure safe and secure working environments.')}>

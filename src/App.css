@@ -35,9 +35,10 @@ body, html, #root, .App {
 }
 
 .logo-dc {
-  font-size: 2rem; /* was 1.5rem */
+  font-size: 2rem;
   font-weight: bold;
   color: #f26522;
+  margin-right: 0.3em; /* 🔥 THIS adds a nice clean space */
 }
 
 .logo-cable {
@@ -51,6 +52,31 @@ body, html, #root, .App {
   color: #ffffff;
   margin-top: 0.2rem;
 }
+
+.tagline {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tagline-normal {
+  color: white;
+}
+
+.tagline-gradient {
+  font-weight: 900;
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, #f26522 0%, #f26522 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(242, 101, 34, 0.6);
+
+}
+
+
 /* NAV LINKS */
 .nav-links {
   list-style: none;
@@ -163,6 +189,7 @@ button:hover {
   font-weight: 600;
   font-size: 0.95rem;
 }
+
 
 /* CONTACT LINK */
 .contact-link {
