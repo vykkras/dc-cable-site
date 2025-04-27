@@ -1,3 +1,4 @@
+/* BASIC RESETS */
 body, html, #root, .App {
   height: 100%;
   margin: 0;
@@ -7,21 +8,17 @@ body, html, #root, .App {
   background-color: #111;
 }
 
-/* VIDEO BACKGROUND (if used) */
-
-
 /* NAVBAR */
 .navbar {
   background: transparent;
   color: white;
   padding: 1rem 2rem;
-  position: absolute; /* <-- This is important */
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 10; /* keep it above other stuff */
+  z-index: 10;
 }
-
 
 .navbar-container {
   display: flex;
@@ -38,21 +35,22 @@ body, html, #root, .App {
   font-size: 2rem;
   font-weight: bold;
   color: #f26522;
-  margin-right: 0.3em; /* 🔥 THIS adds a nice clean space */
+  margin-right: 0.3em;
 }
 
 .logo-cable {
-  font-size: 2rem; /* was 1.5rem */
+  font-size: 2rem;
   font-weight: bold;
   color: #eee;
 }
 
 .logo-sub {
-  font-size: 0.85rem; /* was 0.7rem */
+  font-size: 0.85rem;
   color: #ffffff;
   margin-top: 0.2rem;
 }
 
+/* TAGLINE */
 .tagline {
   margin-top: 0.5rem;
   font-size: 2rem;
@@ -73,9 +71,7 @@ body, html, #root, .App {
   background-clip: text;
   text-fill-color: transparent;
   text-shadow: 0 0 8px rgba(242, 101, 34, 0.6);
-
 }
-
 
 /* NAV LINKS */
 .nav-links {
@@ -83,7 +79,7 @@ body, html, #root, .App {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-left: auto; /* 👈 PUSHES NAV LINKS TO THE RIGHT */
+  margin-left: auto;
   padding-left: 0;
 }
 
@@ -92,15 +88,47 @@ body, html, #root, .App {
   text-decoration: none;
   font-weight: bold;
 }
-/* HAMBURGER (mobile only) */
+
+/* HAMBURGER */
 .hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
+  display: none; /* hide by default */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f26522;
   border: none;
-  color: #f26522;
   cursor: pointer;
-  margin-left: auto;
+  border-radius: 5px;
+}
+
+.bar {
+  width: 24px;
+  height: 3px;
+  background-color: white; /* White lines */
+  border-radius: 2px;
+}
+.hamburger.attention {
+  animation: giggle 1s ease;
+}
+
+@keyframes giggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+.hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* MAIN SECTIONS */
@@ -133,8 +161,6 @@ body, html, #root, .App {
   color: #ccc;
   margin: 0 auto 1.5rem;
 }
-
-
 
 /* BUTTONS */
 button {
@@ -190,7 +216,6 @@ button:hover {
   font-size: 0.95rem;
 }
 
-
 /* CONTACT LINK */
 .contact-link {
   color: #ffffff;
@@ -220,10 +245,14 @@ button:hover {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* RESPONSIVE: MOBILE FIXES */
+/* RESPONSIVE: MOBILE */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
   .nav-links {
-    background: rgba(31, 41, 55, 0.95); /* dark blue transparent */
+    background: rgba(31, 41, 55, 0.95);
     padding: 2rem 0;
     top: 80px;
     right: 0;
@@ -237,10 +266,6 @@ button:hover {
 
   .nav-links.open {
     display: flex;
-  }
-
-  .hamburger {
-    display: block;
   }
 
   .home-grid,
@@ -269,3 +294,4 @@ button:hover {
     margin-bottom: 20px;
   }
 }
+

@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [attention, setAttention] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAttention(true);
+
+      setTimeout(() => {
+        setAttention(false);
+      }, 1000); // Stop giggle after 1s
+    }, 2000); // Start giggle after 2s
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -16,9 +28,14 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger */}
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </button>
+        <button 
+  className={`hamburger ${menuOpen ? 'open' : ''}`} 
+  onClick={() => setMenuOpen(!menuOpen)}
+>
+  <div className="bar"></div>
+  <div className="bar"></div>
+  <div className="bar"></div>
+</button>
 
         {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -33,6 +50,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
 
 
 

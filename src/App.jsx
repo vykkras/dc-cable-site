@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About'; // ✅ fixed name
 import Gallery from './pages/Gallery'; // adjust path if needed
-import Navbar from './pages/Navbar';
+import Navbar from './pages/Navbar2';
 
 import './App.css';
 
@@ -12,18 +12,11 @@ function App() {
     <Router>
       <div
  style={{
-  background: "url('/fiber.jpg') center/cover no-repeat, linear-gradient(180deg, #1f2937 0%, #374151 80%, #ff7a33 100%)",
+  background: "url('/fiber.jpg') center/cover no-repeat",
   minHeight: '100vh',
   minWidth: '100vw',
   color: 'white',
-}}
-  
-  
-  
-  
-  
-  
->
+}}>
 
         {/* Navbar */}
         <Navbar />
