@@ -2,18 +2,243 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <!-- inside the <head> -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/favicon.ico" />
-
-
-
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <title>DC Cable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Cable | Powering Possibilities</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">
+          <span class="brand-mark">DC</span>
+          <div>
+            <p class="brand-title">DC Cable</p>
+            <p class="brand-subtitle">Authorized Contractor</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="btn btn-dark" href="#contact">Get in Touch</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">DC Cable · Powering Possibilities</p>
+            <h1>High-quality aerial and underground cable installations.</h1>
+            <p class="lead">
+              We deliver safe, reliable infrastructure work across the
+              continental U.S., with teams based in Florida and ready to
+              mobilize fast.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-accent" href="#contact">Start a Project</a>
+              <a class="btn btn-ghost" href="#services">View Services</a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <p class="stat">OSHA</p>
+                <p class="stat-label">Certified contractor</p>
+              </div>
+              <div>
+                <p class="stat">U.S. wide</p>
+                <p class="stat-label">Based in Florida</p>
+              </div>
+              <div>
+                <p class="stat">10+ yrs</p>
+                <p class="stat-label">Hands-on experience</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <p class="card-label">Emergency response</p>
+              <h2>Ready when storms hit.</h2>
+              <p>
+                Rapid restoration, full-scale deployments, and strict safety
+                protocols that keep communities connected.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Aerial installs</span>
+                <span class="pill">Underground runs</span>
+                <span class="pill">Fiber splicing</span>
+                <span class="pill">Coax maintenance</span>
+              </div>
+              <a class="btn btn-light" href="#contact">Schedule a Call</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Services</p>
+              <h2>Tap a service to see details.</h2>
+            </div>
+            <p class="section-copy">
+              From new installs to ongoing maintenance, we bring certified crews
+              and proven processes to every job site.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <details class="detail-card">
+              <summary>OSHA Certified</summary>
+              <p>
+                Safety-led crews with documentation and protocols that meet OSHA
+                compliance requirements.
+              </p>
+            </details>
+            <details class="detail-card">
+              <summary>Aerial Installation</summary>
+              <p>
+                Pole-to-pole routing, lash and tension management, and clean
+                aerial execution.
+              </p>
+            </details>
+            <details class="detail-card">
+              <summary>Based in Florida</summary>
+              <p>
+                Rapid mobilization with coverage across the continental U.S.
+              </p>
+            </details>
+            <details class="detail-card">
+              <summary>Underground Runs</summary>
+              <p>
+                Conduit placement, trenching, and restoration delivered to
+                municipal standards.
+              </p>
+            </details>
+            <details class="detail-card">
+              <summary>Fiber Splicing</summary>
+              <p>
+                Low-loss splicing, OTDR testing, and clean, documented
+                terminations.
+              </p>
+            </details>
+            <details class="detail-card">
+              <summary>Coax Maintenance</summary>
+              <p>
+                Signal integrity checks, replacement, and preventive service to
+                reduce outages.
+              </p>
+            </details>
+            <details class="detail-card">
+              <summary>10+ Years Experience</summary>
+              <p>
+                A decade of field expertise across commercial and emergency
+                response projects.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section muted">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">About</p>
+              <h2>Precision, safety, and reliability nationwide.</h2>
+            </div>
+          </div>
+          <div class="about-grid">
+            <div>
+              <p class="section-copy">
+                At DC Cable, we specialize in high-quality aerial and
+                underground installations. With over a decade of hands-on
+                experience, we have earned a reputation for precision, safety,
+                and reliability across the continental U.S., with roots in
+                Florida.
+              </p>
+            </div>
+            <div class="about-panel">
+              <h3>Emergency Response & Past Projects</h3>
+              <ul>
+                <li>Hurricane Ida — emergency restoration in Louisiana (2021)</li>
+                <li>Hurricane Ian — critical repairs in Fort Myers, FL (2022)</li>
+                <li>Hurricane Francine — full deployment in Louisiana (2024)</li>
+                <li>
+                  Hurricane Helene — multi-state support in GA, NC, and SC
+                  (2024)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Gallery</p>
+              <h2>Recent field work.</h2>
+            </div>
+            <p class="section-copy">
+              A look at deployments, installs, and maintenance work in the
+              field.
+            </p>
+          </div>
+          <div class="media-grid">
+            <video controls class="media-card">
+              <source src="videos/one.mp4" type="video/mp4" />
+            </video>
+            <video controls class="media-card">
+              <source src="videos/two.mp4" type="video/mp4" />
+            </video>
+            <video controls class="media-card">
+              <source src="videos/three.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta">
+        <div class="container cta-inner">
+          <div>
+            <h2>Ready to plan your next install?</h2>
+            <p>
+              Email us at dccablellc@yahoo.com or call +1 (305) 753-6882 to scope
+              your project.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-dark" href="tel:+13057536882">Call Now</a>
+            <a class="btn btn-ghost" href="mailto:dccablellc@yahoo.com">Email Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="brand-title">DC Cable</p>
+          <p class="footer-copy">
+            Based in Florida · Serving the continental U.S. ·
+            dccablellc@yahoo.com · +1 (305) 753-6882
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+        </div>
+        <div>
+          <p class="footer-title">Certifications</p>
+          <p class="footer-copy">OSHA Certified · Licensed Contractor</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
