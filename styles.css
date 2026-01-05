@@ -673,6 +673,23 @@ p {
 }
 
 @media (max-width: 600px) {
+  .modal {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .modal-card {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    padding: 1.5rem;
+  }
+
+  .modal .quote-form {
+    grid-template-columns: 1fr !important;
+  }
+
   .cta-inner {
     padding: 2rem 1.5rem;
   }
@@ -694,7 +711,4 @@ p {
     justify-content: center;
   }
 
-  .modal-card {
-    padding: 1.5rem;
-  }
 }
