@@ -499,7 +499,7 @@ p {
   font-weight: 600;
 }
 
-.quote-form input,
+.quote-form input:not([type="checkbox"]),
 .quote-form textarea,
 .multi-trigger {
   border-radius: 12px;
@@ -511,7 +511,7 @@ p {
   width: 100%;
 }
 
-.quote-form input::placeholder,
+.quote-form input:not([type="checkbox"])::placeholder,
 .quote-form textarea::placeholder {
   color: rgba(247, 243, 237, 0.7);
 }
@@ -546,6 +546,7 @@ p {
   max-height: 240px;
   overflow-y: auto;
   box-sizing: border-box;
+  justify-items: stretch;
 }
 
 .multi-select.is-open .multi-panel {
@@ -556,9 +557,12 @@ p {
 .multi-option {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.5rem;
   padding: 0.4rem 0.5rem;
   border-radius: 8px;
+  width: 100%;
+  text-align: left;
 }
 
 .multi-option:hover {
@@ -567,6 +571,16 @@ p {
 
 .multi-option input {
   accent-color: var(--accent);
+  margin: 0;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+}
+
+.multi-option span {
+  flex: 1;
+  line-height: 1.3;
+  text-align: left;
 }
 
 .quote-form .btn {
