@@ -13,21 +13,14 @@ anchorLinks.forEach((link) => {
 
 const quoteForm = document.getElementById('quote-form')
 if (quoteForm) {
+  const successMessage = quoteForm.querySelector('.form-success')
   quoteForm.addEventListener('submit', (event) => {
     event.preventDefault()
-    const formData = new FormData(quoteForm)
-    const name = formData.get('name') || ''
-    const email = formData.get('email') || ''
-    const phone = formData.get('phone') || ''
-    const service = formData.get('service') || ''
-    const message = formData.get('message') || ''
-
-    const subject = encodeURIComponent(`Quote request: ${service}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\n\nProject details:\n${message}`,
-    )
-
-    window.location.href = `mailto:dccablellc@yahoo.com?subject=${subject}&body=${body}`
+    if (successMessage) {
+      successMessage.textContent =
+        'Thanks! Your request is ready. We will contact you shortly.'
+    }
+    quoteForm.reset()
   })
 }
 
