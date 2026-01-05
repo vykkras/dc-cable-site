@@ -519,3 +519,25 @@ p {
     grid-column: span 1;
   }
 }
+
+@media (max-width: 600px) {
+  .cta-inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-copy,
+  .cta-actions,
+  .quote-form {
+    width: 100%;
+  }
+
+  .quote-form {
+    flex: 1 1 100%;
+  }
+
+  .cta-actions .btn,
+  .quote-form .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
