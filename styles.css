@@ -437,10 +437,6 @@ p {
   min-width: 0;
 }
 
-.field-label {
-  font-weight: 600;
-}
-
 .field-full {
   grid-column: 1 / -1;
   width: 100%;
@@ -451,6 +447,7 @@ p {
 }
 
 .quote-form input,
+.quote-form select,
 .quote-form textarea {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -466,25 +463,9 @@ p {
   color: rgba(247, 243, 237, 0.7);
 }
 
-.service-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem;
-}
-
-.check {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.6rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(11, 11, 13, 0.6);
-  font-size: 0.85rem;
-}
-
-.check input {
-  accent-color: var(--accent);
+.field-hint {
+  font-size: 0.75rem;
+  color: rgba(247, 243, 237, 0.7);
 }
 
 .quote-form .btn {
@@ -580,9 +561,6 @@ p {
     grid-template-columns: 1fr !important;
   }
 
-  .service-options {
-    grid-template-columns: 1fr;
-  }
 
   .field-full {
     grid-column: span 1;
