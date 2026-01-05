@@ -230,15 +230,33 @@
               <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" />
             </div>
             <div class="field">
-              <label for="service">Service type</label>
-              <select id="service" name="service">
-                <option value="Aerial Installation">Aerial Installation</option>
-                <option value="Underground Runs">Underground Runs</option>
-                <option value="Fiber Splicing">Fiber Splicing</option>
-                <option value="Coax Maintenance">Coax Maintenance</option>
-                <option value="Emergency Response">Emergency Response</option>
-                <option value="Other">Other</option>
-              </select>
+              <span class="field-label">Service types</span>
+              <div class="service-options" role="group" aria-label="Service types">
+                <label class="check">
+                  <input type="checkbox" name="service" value="Aerial Installation" />
+                  <span>Aerial Installation</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="service" value="Underground Runs" />
+                  <span>Underground Runs</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="service" value="Fiber Splicing" />
+                  <span>Fiber Splicing</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="service" value="Coax Maintenance" />
+                  <span>Coax Maintenance</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="service" value="Emergency Response" />
+                  <span>Emergency Response</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="service" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
             </div>
             <div class="field field-full">
               <label for="message">Project details</label>
