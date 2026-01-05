@@ -142,3 +142,14 @@ if (heroVideoA && heroVideoB) {
   preloadIdle()
   attachActiveHandlers()
 }
+
+const serviceSelect = document.getElementById('service')
+if (serviceSelect && serviceSelect.multiple) {
+  serviceSelect.addEventListener('mousedown', (event) => {
+    const option = event.target
+    if (option && option.tagName === 'OPTION') {
+      event.preventDefault()
+      option.selected = !option.selected
+    }
+  })
+}
