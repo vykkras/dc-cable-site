@@ -540,6 +540,11 @@ p {
   padding: 0.6rem;
   display: none;
   z-index: 5;
+  width: 100%;
+  max-width: 100%;
+  max-height: 240px;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .multi-select.is-open .multi-panel {
@@ -652,13 +657,18 @@ p {
     align-items: flex-start;
   }
 
-  .quote-form {
+  .quote-form,
+  .modal .quote-form {
     grid-template-columns: 1fr !important;
   }
 
 
   .field-full {
     grid-column: span 1;
+  }
+
+  .modal .field-full {
+    grid-column: 1 / -1;
   }
 }
 
