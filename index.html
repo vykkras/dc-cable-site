@@ -216,39 +216,9 @@
             <a class="btn btn-dark" href="tel:+13057536882">Call Now</a>
             <a class="btn btn-dark" href="mailto:dccablellc@yahoo.com">Email Us</a>
           </div>
-          <form class="quote-form" id="quote-form">
-            <div class="field">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@email.com" required />
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" />
-            </div>
-            <div class="field">
-              <label for="service">Service types</label>
-              <select id="service" name="service" multiple size="4">
-                <option value="Aerial Installation">Aerial Installation</option>
-                <option value="Underground Runs">Underground Runs</option>
-                <option value="Fiber Splicing">Fiber Splicing</option>
-                <option value="Coax Maintenance">Coax Maintenance</option>
-                <option value="Emergency Response">Emergency Response</option>
-                <option value="Other">Other</option>
-              </select>
-              <span class="field-hint">Click to toggle multiple selections.</span>
-            </div>
-            <div class="field field-full">
-              <label for="message">Project details</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project." required></textarea>
-            </div>
-            <button class="btn btn-accent" type="submit">Request a Quote</button>
-            <p class="form-note">We will follow up within one business day.</p>
-            <p class="form-success" role="status" aria-live="polite"></p>
-          </form>
+          <button class="btn btn-accent" id="open-quote-modal" type="button">
+            Request a Quote
+          </button>
         </div>
       </section>
     </main>
@@ -276,6 +246,77 @@
 
     <div class="toast" id="form-toast" role="status" aria-live="polite">
       Request sent successfully.
+    </div>
+
+    <div class="modal" id="quote-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-card" role="document">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Project Quote</p>
+            <h3>Tell us about your install.</h3>
+          </div>
+          <button class="modal-close" type="button" aria-label="Close quote form">
+            ✕
+          </button>
+        </div>
+        <form class="quote-form" id="quote-form">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" />
+          </div>
+          <div class="field">
+            <label for="service-trigger">Service types</label>
+            <div class="multi-select" id="service-select">
+              <button class="multi-trigger" id="service-trigger" type="button">
+                Select services
+              </button>
+              <div class="multi-panel" role="listbox" aria-multiselectable="true">
+                <label class="multi-option">
+                  <input type="checkbox" value="Aerial Installation" />
+                  <span>Aerial Installation</span>
+                </label>
+                <label class="multi-option">
+                  <input type="checkbox" value="Underground Runs" />
+                  <span>Underground Runs</span>
+                </label>
+                <label class="multi-option">
+                  <input type="checkbox" value="Fiber Splicing" />
+                  <span>Fiber Splicing</span>
+                </label>
+                <label class="multi-option">
+                  <input type="checkbox" value="Coax Maintenance" />
+                  <span>Coax Maintenance</span>
+                </label>
+                <label class="multi-option">
+                  <input type="checkbox" value="Emergency Response" />
+                  <span>Emergency Response</span>
+                </label>
+                <label class="multi-option">
+                  <input type="checkbox" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
+              <input type="hidden" name="service" id="service" />
+            </div>
+            <span class="field-hint">Pick one or more services.</span>
+          </div>
+          <div class="field field-full">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project." required></textarea>
+          </div>
+          <button class="btn btn-accent" type="submit">Send request</button>
+          <p class="form-note">We will follow up within one business day.</p>
+          <p class="form-success" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>

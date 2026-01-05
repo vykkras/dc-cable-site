@@ -12,6 +12,56 @@ anchorLinks.forEach((link) => {
 })
 
 const quoteForm = document.getElementById('quote-form')
+const quoteModal = document.getElementById('quote-modal')
+const openQuoteModal = document.getElementById('open-quote-modal')
+const closeQuoteModal = quoteModal ? quoteModal.querySelector('.modal-close') : null
+let lastActiveElement = null
+
+const closeModal = () => {
+  if (!quoteModal) return
+  quoteModal.classList.remove('is-open')
+  quoteModal.setAttribute('aria-hidden', 'true')
+  document.body.style.overflow = ''
+  if (lastActiveElement) {
+    lastActiveElement.focus()
+    lastActiveElement = null
+  }
+}
+
+const openModal = () => {
+  if (!quoteModal) return
+  lastActiveElement = document.activeElement
+  quoteModal.classList.add('is-open')
+  quoteModal.setAttribute('aria-hidden', 'false')
+  document.body.style.overflow = 'hidden'
+  const focusTarget = quoteModal.querySelector('input, textarea, button')
+  if (focusTarget) {
+    focusTarget.focus()
+  }
+}
+
+if (openQuoteModal) {
+  openQuoteModal.addEventListener('click', openModal)
+}
+
+if (closeQuoteModal) {
+  closeQuoteModal.addEventListener('click', closeModal)
+}
+
+if (quoteModal) {
+  quoteModal.addEventListener('click', (event) => {
+    if (event.target === quoteModal) {
+      closeModal()
+    }
+  })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && quoteModal.classList.contains('is-open')) {
+      closeModal()
+    }
+  })
+}
+
 if (quoteForm) {
   const successMessage = quoteForm.querySelector('.form-success')
   const toast = document.getElementById('form-toast')
@@ -28,6 +78,7 @@ if (quoteForm) {
       }, 2400)
     }
     quoteForm.reset()
+    closeModal()
   })
 }
 
@@ -143,13 +194,38 @@ if (heroVideoA && heroVideoB) {
   attachActiveHandlers()
 }
 
-const serviceSelect = document.getElementById('service')
-if (serviceSelect && serviceSelect.multiple) {
-  serviceSelect.addEventListener('mousedown', (event) => {
-    const option = event.target
-    if (option && option.tagName === 'OPTION') {
-      event.preventDefault()
-      option.selected = !option.selected
+const serviceSelect = document.getElementById('service-select')
+if (serviceSelect) {
+  const trigger = serviceSelect.querySelector('.multi-trigger')
+  const panel = serviceSelect.querySelector('.multi-panel')
+  const hiddenInput = serviceSelect.querySelector('#service')
+  const checkboxes = serviceSelect.querySelectorAll('input[type="checkbox"]')
+
+  const updateLabel = () => {
+    const selected = Array.from(checkboxes)
+      .filter((box) => box.checked)
+      .map((box) => box.value)
+    if (hiddenInput) {
+      hiddenInput.value = selected.join(', ')
     }
+    if (trigger) {
+      trigger.textContent = selected.length ? selected.join(', ') : 'Select services'
+    }
+  }
+
+  if (trigger && panel) {
+    trigger.addEventListener('click', () => {
+      serviceSelect.classList.toggle('is-open')
+    })
+
+    document.addEventListener('click', (event) => {
+      if (!serviceSelect.contains(event.target)) {
+        serviceSelect.classList.remove('is-open')
+      }
+    })
+  }
+
+  checkboxes.forEach((box) => {
+    box.addEventListener('change', updateLabel)
   })
 }

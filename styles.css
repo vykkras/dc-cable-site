@@ -429,6 +429,58 @@ p {
   min-width: 0;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(7, 7, 9, 0.75);
+  z-index: 40;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-card {
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #0b0b0d;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  color: #f7f3ed;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-close {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #f7f3ed;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.modal .quote-form {
+  width: 100%;
+  flex: initial;
+}
+
 .field {
   display: flex;
   flex-direction: column;
@@ -447,8 +499,8 @@ p {
 }
 
 .quote-form input,
-.quote-form select,
-.quote-form textarea {
+.quote-form textarea,
+.multi-trigger {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 0.65rem 0.75rem;
@@ -466,6 +518,49 @@ p {
 .field-hint {
   font-size: 0.75rem;
   color: rgba(247, 243, 237, 0.7);
+}
+
+.multi-select {
+  position: relative;
+}
+
+.multi-trigger {
+  text-align: left;
+  cursor: pointer;
+}
+
+.multi-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #0b0b0d;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 0.6rem;
+  display: none;
+  z-index: 5;
+}
+
+.multi-select.is-open .multi-panel {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.multi-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+}
+
+.multi-option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.multi-option input {
+  accent-color: var(--accent);
 }
 
 .quote-form .btn {
@@ -587,5 +682,9 @@ p {
   .quote-form .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .modal-card {
+    padding: 1.5rem;
   }
 }
