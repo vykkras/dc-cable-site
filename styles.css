@@ -426,6 +426,7 @@ p {
   gap: 1rem;
   flex: 1 1 520px;
   width: min(560px, 100%);
+  min-width: 0;
 }
 
 .field {
@@ -433,6 +434,7 @@ p {
   flex-direction: column;
   gap: 0.4rem;
   font-size: 0.85rem;
+  min-width: 0;
 }
 
 .field-full {
@@ -452,6 +454,7 @@ p {
   background: rgba(11, 11, 13, 0.6);
   color: #f7f3ed;
   font-family: inherit;
+  width: 100%;
 }
 
 .quote-form input::placeholder,
@@ -533,6 +536,7 @@ p {
 
   .quote-form {
     flex: 1 1 100%;
+    grid-template-columns: 1fr;
   }
 
   .cta-actions .btn,
