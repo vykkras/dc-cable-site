@@ -14,11 +14,18 @@ anchorLinks.forEach((link) => {
 const quoteForm = document.getElementById('quote-form')
 if (quoteForm) {
   const successMessage = quoteForm.querySelector('.form-success')
+  const toast = document.getElementById('form-toast')
   quoteForm.addEventListener('submit', (event) => {
     event.preventDefault()
     if (successMessage) {
       successMessage.textContent =
         'Thanks! Your request is ready. We will contact you shortly.'
+    }
+    if (toast) {
+      toast.classList.add('is-visible')
+      setTimeout(() => {
+        toast.classList.remove('is-visible')
+      }, 2400)
     }
     quoteForm.reset()
   })
