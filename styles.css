@@ -479,6 +479,7 @@ p {
 .modal .quote-form {
   width: 100%;
   flex: initial;
+  grid-template-columns: 1fr;
 }
 
 .field {
@@ -569,19 +570,19 @@ p {
 }
 
 .quote-form .btn {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   justify-self: start;
 }
 
 .form-note {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   margin: 0;
   font-size: 0.8rem;
   color: rgba(247, 243, 237, 0.75);
 }
 
 .form-success {
-  grid-column: span 2;
+  grid-column: 1 / -1;
   margin: 0;
   font-size: 0.85rem;
   color: #ffd7bf;
